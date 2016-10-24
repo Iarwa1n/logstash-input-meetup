@@ -4,14 +4,7 @@ require "logstash/namespace"
 require "logstash/json"
 require "socket" # for Socket.gethostname
 
-# Run command line tools and capture the whole output as an event.
-#
-# Notes:
-#
-# * The `@source` of this event will be the command run.
-# * The `@message` of this event will be the entire stdout of the command
-#   as one event.
-#
+# Connect to the meetup.com API and acquire information about meetups for the configured meetup API user
 class LogStash::Inputs::Meetup < LogStash::Inputs::Base
 
   config_name "meetup"
